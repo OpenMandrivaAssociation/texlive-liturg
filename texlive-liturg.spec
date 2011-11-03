@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/liturg
+# catalog-date 2008-09-08 11:32:46 +0200
+# catalog-license lppl
+# catalog-version 1.0
 Name:		texlive-liturg
 Version:	1.0
 Release:	1
@@ -43,6 +49,7 @@ package assumes availability of Latin typesetting packages.
 %doc %{_texmfdistdir}/doc/latex/liturg/test.tex
 #- source
 %doc %{_texmfdistdir}/source/latex/liturg/liturg.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -53,3 +60,5 @@ package assumes availability of Latin typesetting packages.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
